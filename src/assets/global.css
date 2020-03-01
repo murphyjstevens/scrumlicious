@@ -1,0 +1,8 @@
+* {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  color: var(--dark-gray);
+}
+
+.main-content {
+  padding: 2em 5em;
+}
