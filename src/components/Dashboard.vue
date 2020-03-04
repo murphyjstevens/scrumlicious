@@ -1,15 +1,22 @@
 <template>
-  <b-tabs content-class="mt-3">
-    <b-tab title="Backlog" active><p>I'm the first tab</p></b-tab>
-    <b-tab title="Second"><p>I'm the second tab</p></b-tab>
-  </b-tabs>
+  <div>
+    <TabView>
+      <TabPanel header="Backlog"><p>I'm the first tab</p></TabPanel>
+      <TabPanel header="Second"><p>I'm the second tab</p></TabPanel>
+    </TabView>
+  </div>
 </template>
 
 <script>
+import TabView from 'primevue/tabview'
+import TabPanel from 'primevue/tabpanel'
+
 export default {
-  name: 'Dashboard',
-  props: {
-  }
+  components: {
+    TabView,
+    TabPanel
+  },
+  name: 'Dashboard'
 }
 </script>
 

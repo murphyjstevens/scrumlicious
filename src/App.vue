@@ -31,12 +31,8 @@ export default {
     flex-direction: column;
   }
   .header-space {
-    height: 5em;
+    height: 3em;
     width: 100%;
-  }
-
-  .sidebar-space {
-    width: 15em;
   }
 
   .content {
@@ -45,7 +41,22 @@ export default {
     justify-content: stretch;
   }
 
+  .sidebar-space {
+    justify-self: flex-start;
+    width: 15em;
+  }
+
   .main-content {
+    flex-grow: 1;
+  }
+
+  .p-datatable table {
+    table-layout: auto !important;
+  }
+
+  .p-dialog-content {
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
   }
 </style>

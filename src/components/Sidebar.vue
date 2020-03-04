@@ -1,23 +1,18 @@
 <template>
   <div class="sidebar">
-    <a href="/" class="sidebar-item">
-      <b-icon icon="columns" class="sidebar-item-icon"></b-icon>
+    <router-link to="/" class="sidebar-item">
+      <i class="pi pi-home sidebar-item-icon"></i>
       <div class="sidebar-item-text">Dashboard</div>
-    </a>
-    <a href="/" class="sidebar-item">
-      <b-icon icon="bucket" class="sidebar-item-icon"></b-icon>
+    </router-link>
+    <router-link to="/Backlog" class="sidebar-item">
+      <i class="pi pi-folder sidebar-item-icon"></i>
       <div class="sidebar-item-text">Backlog</div>
-    </a>
+    </router-link>
   </div>
 </template>
 
 <script>
-import { BIcon } from 'bootstrap-vue'
-
 export default {
-  components: {
-    BIcon
-  },
   name: 'Sidebar'
 }
 </script>
@@ -28,11 +23,10 @@ export default {
     display: flex;
     flex-direction: column;
     left: 0;
-    top: 5em;
+    top: 3em;
     bottom: 0;
     width: 15em;
     background-color: lightgray;
-
     padding: 1em 0;
   }
 
@@ -50,10 +44,8 @@ export default {
   }
 
   .sidebar-item-icon {
-    height: 1.5em;
-    width: 1.5em;
     margin-right: 5px;
-    fill: var(--dark-gray);
+    font-size: 1.5em;
   }
 
   .sidebar-item-text {

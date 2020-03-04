@@ -1,28 +1,18 @@
 <template>
   <header class="header">
     <a href="/" class="header-brand">ScrumLicious</a>
-    <nav>
-      <a class="nav-item" href="#projects">
-        <span class="nav-item-span">Projects</span>
-      </a>
-      <a class="nav-item" href="#skills">
-        <span class="nav-item-span">Skills</span>
-      </a>
-    </nav>
   </header>
 </template>
 
 <script>
 export default {
-  name: 'Header',
-  props: {
-  }
+  name: 'Header'
 }
 </script>
 
 <style scoped>  
   header {
-    height: 5em;
+    height: 3em;
     display: flex;
     position: fixed;
     flex-direction: row;
@@ -47,26 +37,5 @@ export default {
   .header-brand:hover {
     color: lightgray;
     text-decoration: none;
-  }
-
-  nav {
-    display: flex;
-    flex-direction: row;
-    align-self: stretch;
-  }
-  
-  .nav-item {
-    display: flex;
-    align-items: center;
-    color: white;
-    padding: 0 1em;
-  }
-
-  .nav-item:hover {
-    color: lightgray;
-  }
-
-  .nav-item-span {
-    color: inherit;
   }
 </style>

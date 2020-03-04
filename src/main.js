@@ -1,23 +1,27 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
 import App from './App.vue'
 
+import 'primevue/resources/themes/nova-light/theme.css';
+import 'primevue/resources/primevue.min.css';
+import 'primeicons/primeicons.css';
+
 import './assets/variables.css'
 import './assets/global.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import Dashboard from './components/Dashboard'
+import Backlog from './components/Backlog'
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
-Vue.use(BootstrapVue)
-Vue.use(IconsPlugin)
 
 const router = new VueRouter({
+  mode: 'history',
+  base: __dirname,
   routes: [
-    { path: '/', name: 'Dashboard', component: Dashboard }
+    { path: '/', name: 'Dashboard', component: Dashboard },
+    { path: '/Backlog', name: 'Backlog', component: Backlog }
   ]
 })
 
