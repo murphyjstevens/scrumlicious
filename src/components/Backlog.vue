@@ -1,7 +1,7 @@
 <template>
   <div class="flex-column">
     <div class="flex-row button-row">
-      <SplitButton label="User Story" icon="pi pi-plus" @click="openUserStoryDialog()" :model="addDropDownItems"/>
+      <SplitButton label="User Story" icon="fas fa-plus" @click="openUserStoryDialog()" :model="addDropDownItems"/>
     </div>
     <DataTable :value="items" :resizableColumns="true" columnResizeMode="fit">
         <Column field="priority" header="Priority"></Column>
@@ -39,7 +39,7 @@ export default {
       addDropDownItems: [
         {
           label: 'Add Bug',
-					icon: 'pi pi-plus',
+					icon: 'fas fa-plus',
 					command: () => {
 						this.openBugDialog()
           }

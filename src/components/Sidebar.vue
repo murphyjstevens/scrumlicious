@@ -1,11 +1,11 @@
 <template>
   <div class="sidebar">
     <router-link to="/" class="sidebar-item">
-      <i class="pi pi-home sidebar-item-icon"></i>
+      <i class="fas fa-home sidebar-item-icon"></i>
       <div class="sidebar-item-text">Dashboard</div>
     </router-link>
     <router-link to="/Backlog" class="sidebar-item">
-      <i class="pi pi-folder sidebar-item-icon"></i>
+      <i class="fas fa-chalkboard sidebar-item-icon"></i>
       <div class="sidebar-item-text">Backlog</div>
     </router-link>
   </div>
@@ -45,7 +45,7 @@ export default {
 
   .sidebar-item-icon {
     margin-right: 5px;
-    font-size: 1.5em;
+    font-size: 1em;
   }
 
   .sidebar-item-text {

@@ -2,7 +2,7 @@
     <Dialog :visible.sync="displayDialog" :maximizable="true" :modal="true" :style="{width: '80vw', minHeight: '50vh', maxHeight: '90vh'}">
       <template #header>
         <div class="dialog-header-title">
-          <i class="pi pi-user-edit dialog-title-icon" v-tooltip.top="'User Story'"/>
+          <i class="fas fa-book-reader dialog-title-icon" v-tooltip.top="'User Story'"/>
           <InputText type="text" v-model="title" placeholder="Insert title here" class="work-item-title" />
         </div>
       </template>
