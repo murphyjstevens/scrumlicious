@@ -59,4 +59,14 @@ export default {
     flex-direction: column;
     flex-grow: 1;
   }
+
+  body .p-dialog .p-dialog-titlebar {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  body .p-fieldset .p-fieldset-content {
+    display: flex;
+    flex-direction: column;
+  }
 </style>

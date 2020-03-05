@@ -1,9 +1,18 @@
 <template>
-    <Dialog :header="header" :visible.sync="displayDialog" :style="{width: '80vw', minHeight: '50vh', maxHeight: '90vh'}">
-      <div class="dialog-content">
-        <InputText type="text" v-model="title" placeholder="Insert title here" class="work-item-title" />
-        <span class="form-header margin-top">Description</span>
-        <Editor v-model="description" editorStyle="height: 320px"/>
+    <Dialog :visible.sync="displayDialog" :maximizable="true" :modal="true" :style="{width: '80vw', minHeight: '50vh', maxHeight: '90vh'}">
+      <template #header>
+        <div class="dialog-header-title">
+          <i class="pi pi-user-edit dialog-title-icon" v-tooltip.top="'User Story'"/>
+          <InputText type="text" v-model="title" placeholder="Insert title here" class="work-item-title" />
+        </div>
+      </template>
+      <div class="flex-column dialog-content">
+        <Fieldset class="field-set" legend="Details" :toggleable="true">
+          <Dropdown v-model="selectedStatus" :options="statuses" optionLabel="display" placeholder="Select the Status" />
+        </Fieldset>
+        <Fieldset class="field-set" legend="Description" :toggleable="true">
+          <Textarea v-model="description" rows="5" resize="none"/>
+        </Fieldset>
       </div>
       <template #footer>
         <Button label="Save" class="dialog-button" @click="save" />
@@ -15,21 +24,37 @@
 <script>
 import Button from 'primevue/button'
 import Dialog from 'primevue/dialog'
-import Editor from 'primevue/editor'
+import Dropdown from 'primevue/dropdown'
+import Fieldset from 'primevue/fieldset'
 import InputText from 'primevue/inputtext'
+import Textarea from 'primevue/textarea'
+import Tooltip from 'primevue/tooltip'
 
 export default {
   components: {
     Button,
     Dialog,
-    Editor,
-    InputText
+    Dropdown,
+    Fieldset,
+    InputText,
+    Textarea
+  },
+  directives: {
+    Tooltip
   },
   props: ['header', 'value'],
   data() {
     return {
       title: '',
-      description: ''
+      description: '',
+      selectedStatus: null,
+      statuses: [
+        { id: 0, display: 'New'},
+        { id: 1, display: 'Pending'},
+        { id: 2, display: 'Paused'},
+        { id: 3, display: 'Done'},
+        { id: 4, display: 'Removed'}
+      ]
     }
   },
   methods: {
@@ -55,25 +80,43 @@ export default {
 </script>
 
 <style scoped>
-.dialog-content {
+.dialog-header-title {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.dialog-title-icon {
+  font-size: 24px;
+  color: lightseagreen;
+  margin-right: 5px;
+}
+
+.dialog-content {
   flex-grow: 1;
 }
 
 .work-item-title {
   font-size: 18px;
-  border-width: 0 0 1px 0;
+  border-color: transparent;
   margin-bottom: 5px;
+  background-color: transparent;
+  flex-grow: 1;
+}
+.work-item-title:hover {
+  border-color: inherit;
+}
+.work-item-title:enabled:focus {
+  background-color: white;
 }
 
 .margin-top {
   margin-top: 5px;
 }
 
-.form-header {
-  font-size: 16px;
-  margin-bottom: 2px;
+.field-set {
+  margin: 5px;
 }
 
 .dialog-button {

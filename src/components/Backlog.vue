@@ -51,7 +51,6 @@ export default {
   },
   methods: {
     openUserStoryDialog() {
-      console.log('here')
       this.userStoryDialogHeader = 'Add User Story'
       this.displayUserStoryDialog = true
     },
