@@ -1,30 +1,40 @@
 <template>
   <div class="flex-column">
-    <div class="flex-row button-row">
-      <SplitButton label="User Story" icon="fas fa-plus" @click="openUserStoryDialog()" :model="addDropDownItems"/>
+    <div class="container">
+      <div class="flex-row button-row">
+        <SplitButton label="User Story" icon="fas fa-plus" @click="openUserStoryDialog()" :model="addDropDownItems"/>
+      </div>
+      <DataTable :value="items" :resizableColumns="true" columnResizeMode="fit">
+          <Column field="priority" header="Priority" sortable></Column>
+          <Column field="title" header="Title"></Column>
+          <Column field="type" header="Type" sortable></Column>
+          <Column>
+              <template #body="item">
+                  <Button icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" @click="edit(item.data)" />
+                  <Button icon="pi pi-trash" class="p-button-rounded p-button-warning" @click="confirmDelete(item.data)" />
+              </template>
+          </Column>
+      </DataTable>
     </div>
-    <DataTable :value="items" :resizableColumns="true" columnResizeMode="fit">
-        <Column field="priority" header="Priority"></Column>
-        <Column field="title" header="Title"></Column>
-        <Column field="type" header="Type"></Column>
-    </DataTable>
     
     <UserStory v-model="displayUserStoryDialog" :header=userStoryDialogHeader />
   </div>
 </template>
 
 <script>
-import SplitButton from 'primevue/splitbutton'
+import Button from 'primevue/button'
 import Column from 'primevue/column'
 import DataTable from 'primevue/datatable'
+import SplitButton from 'primevue/splitbutton'
 
 import UserStory from './UserStory'
 
 export default {
   components: {
-    SplitButton,
+    Button,
     Column,
     DataTable,
+    SplitButton,
     UserStory
   },
   name: 'Backlog',
@@ -57,12 +67,25 @@ export default {
     openBugDialog() {
       this.userStoryDialogHeader = 'Add Bug'
       this.displayUserStoryDialog = true
+    },
+    edit(item) {
+      this.openUserStoryDialog();
+      console.log(item);
+    },
+    confirmDelete(item) {
+      console.log(item);
     }
   }
 }
 </script>
 
 <style scoped>
+  .container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 1%;
+  }
+
   .button-row {
     margin: 5px 0;
   }

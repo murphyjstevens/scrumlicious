@@ -26,7 +26,7 @@ export default {
     top: 3em;
     bottom: 0;
     width: 15em;
-    background-color: lightgray;
+    background-color: white;
     padding: 1em 0;
   }
 

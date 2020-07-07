@@ -26,6 +26,9 @@ export default {
 </script>
 
 <style>
+  body {
+    background-color: whitesmoke;
+  }
   #app {
     display: flex;
     flex-direction: column;

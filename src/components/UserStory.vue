@@ -7,16 +7,16 @@
         </div>
       </template>
       <div class="flex-column dialog-content">
-        <Fieldset class="field-set" legend="Details" :toggleable="true">
+        <Fieldset class="field-set" legend="Details" :toggleable="false">
           <Dropdown v-model="selectedStatus" :options="statuses" optionLabel="display" placeholder="Select the Status" />
         </Fieldset>
-        <Fieldset class="field-set" legend="Description" :toggleable="true">
+        <Fieldset class="field-set" legend="Description" :toggleable="false">
           <Textarea v-model="description" rows="5" resize="none"/>
         </Fieldset>
       </div>
       <template #footer>
-        <Button label="Save" class="dialog-button" @click="save" />
         <Button label="Cancel" class="dialog-button p-button-secondary" @click="closeDialog" />
+        <Button label="Save" class="dialog-button" @click="save" />
       </template>
     </Dialog>
 </template>
