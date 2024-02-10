@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     'nuxt-primevue'
   ],
   primevue: {
-    importPT: { from: path.resolve(__dirname, './presets/lara/') },
+    importPT: { from: path.resolve(__dirname, './presets/wind/') },
     options: {
       unstyled: true
     }
