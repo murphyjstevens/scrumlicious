@@ -24,11 +24,6 @@
 <script setup lang="ts">
 import { type Ref, ref } from 'vue'
 
-import Button from 'primevue/button'
-import Column from 'primevue/column'
-import DataTable from 'primevue/datatable'
-import SplitButton from 'primevue/splitbutton'
-
 const items: Ref<any[]> = ref([
   { priority: 40, title: 'Dickerson', type: 'Bug' },
   { priority: 21, title: 'Larsen', type: 'UserStory' },
@@ -69,9 +64,3 @@ function confirmDelete(item: any) {
   console.log(item);
 }
 </script>
-
-<style scoped>
-  .button-row {
-    margin: 5px 0;
-  }
-</style>
