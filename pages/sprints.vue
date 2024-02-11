@@ -1,5 +1,5 @@
 <template>
-  <h2>Dashboard:</h2>
+  <h2>Sprints:</h2>
   <div>
     Nothing here yet, check out Backlog
   </div>

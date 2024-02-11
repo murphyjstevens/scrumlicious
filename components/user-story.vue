@@ -49,6 +49,7 @@
 
 <script setup lang="ts">
 import { type Ref, ref } from 'vue'
+import { BacklogItemStatus } from '~/models/enums';
 
 defineExpose({
   show
@@ -59,10 +60,10 @@ const title: Ref<string> = ref('')
 const description: Ref<string> = ref('')
 const selectedStatus: Ref<any> = ref(null)
 const statuses: Ref<any[]> = ref([
-  { id: 0, display: 'New'},
-  { id: 1, display: 'Pending'},
-  { id: 3, display: 'Done'},
-  { id: 4, display: 'Removed'}
+  { id: BacklogItemStatus.New, display: 'New'},
+  { id: BacklogItemStatus.Pending, display: 'Pending'},
+  { id: BacklogItemStatus.Done, display: 'Done'},
+  { id: BacklogItemStatus.Removed, display: 'Removed'}
 ])
 const displayDialog: Ref<boolean> = ref(false)
 

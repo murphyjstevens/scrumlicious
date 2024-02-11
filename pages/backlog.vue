@@ -80,22 +80,22 @@ const userStoryDialog: Ref<any> = ref()
 const items: Ref<BacklogItem[]> = ref([
   { 
     priority: 40,
-    title: 'Dickerson',
+    title: 'Fix the ringing noise I hear in my ears',
     type: BacklogItemType.Bug
   } as BacklogItem,
   {
     priority: 21,
-    title: 'Larsen',
+    title: 'Add a button to the Backlog view',
     type: BacklogItemType.UserStory
   } as BacklogItem,
   {
     priority: 89,
-    title: 'Geneva',
+    title: 'Every time I sneeze my screen goes black for a second',
     type: BacklogItemType.Bug
   } as BacklogItem,
   {
     priority: 38,
-    title: 'Jami',
+    title: 'Shift every item over one pixel',
     type: BacklogItemType.UserStory
   } as BacklogItem
 ])
